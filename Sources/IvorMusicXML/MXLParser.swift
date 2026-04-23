@@ -138,10 +138,6 @@ extension MXLParser {
         }
     }
 
-    private static func _makeTie(_ text: String) -> MXLTie? {
-        ties[text]
-    }
-
     private static func _makeTempo(_ text: String) -> Float? {
         if let tempo = Float(text),
            tempo > 0 {
@@ -149,6 +145,10 @@ extension MXLParser {
         } else {
             nil
         }
+    }
+
+    private static func _makeTie(_ text: String) -> MXLTie? {
+        ties[text]
     }
 
     private static func _parse(_ data: Data) throws -> MXLEntity {
@@ -317,7 +317,7 @@ extension MXLParser {
 
         let isChord = try node.valueOfOptionalChildElement(.chord) { $0.isEmpty } ?? false
 
-        let tie = try node.optionalChildElements(.tie) { try _parseTie($0) }.reduce(.neither, +)
+        let ties = try node.optionalChildElements(.tie) { try _parseTie($0) }
 
         let graceDuration = try node.optionalChildElement(.grace) { try _parseGraceDuration($0) }
 
@@ -325,7 +325,7 @@ extension MXLParser {
             return .graceNote(MXLGraceNote(isChord: isChord,
                                            value: value,
                                            duration: graceDuration,
-                                           tie: tie))
+                                           ties: Set(ties)))
         }
 
         let duration = try node.valueOfRequiredChildElement(.duration) { _makeDuration($0) }
@@ -333,7 +333,7 @@ extension MXLParser {
         return .note(MXLNote(isChord: isChord,
                              value: value,
                              duration: duration,
-                             tie: tie))
+                             ties: Set(ties)))
     }
 
     private static func _parseNoteValue(_ node: Node) throws -> MXLNote.Value? {

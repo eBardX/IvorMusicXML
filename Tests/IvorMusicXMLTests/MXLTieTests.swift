@@ -10,65 +10,42 @@ struct MXLTieTests {
 
 extension MXLTieTests {
     @Test
-    func test_addNeitherToAny() {
-        #expect(MXLTie.neither + .neither == .neither)
-        #expect(MXLTie.start + .neither == .start)
-        #expect(MXLTie.stop + .neither == .stop)
-        #expect(MXLTie.stopStart + .neither == .stopStart)
+    func test_caseStart() {
+        let tie = MXLTie.start
+
+        if case .start = tie {
+            // pass
+        } else {
+            Issue.record("Expected .start case")
+        }
     }
 
     @Test
-    func test_addNeitherToAnyYieldsOther() {
-        #expect(MXLTie.neither + .start == .start)
-        #expect(MXLTie.neither + .stop == .stop)
-        #expect(MXLTie.neither + .stopStart == .stopStart)
+    func test_caseStop() {
+        let tie = MXLTie.stop
+
+        if case .stop = tie {
+            // pass
+        } else {
+            Issue.record("Expected .stop case")
+        }
     }
 
     @Test
-    func test_addSameToSame() {
-        #expect(MXLTie.start + .start == .start)
-        #expect(MXLTie.stop + .stop == .stop)
-    }
-
-    @Test
-    func test_addStartAndStop() {
-        #expect(MXLTie.start + .stop == .stopStart)
-        #expect(MXLTie.stop + .start == .stopStart)
-    }
-
-    @Test
-    func test_addStopStartToAny() {
-        #expect(MXLTie.stopStart + .start == .stopStart)
-        #expect(MXLTie.stopStart + .stop == .stopStart)
-        #expect(MXLTie.stopStart + .neither == .stopStart)
-        #expect(MXLTie.stopStart + .stopStart == .stopStart)
-    }
-
-    @Test
-    func test_addToStopStart() {
-        #expect(MXLTie.start + .stopStart == .stopStart)
-        #expect(MXLTie.stop + .stopStart == .stopStart)
-        #expect(MXLTie.neither + .stopStart == .stopStart)
-    }
-
-    @Test
-    func test_cases() {
-        #expect(MXLTie.neither == .neither)
+    func test_equality() {
         #expect(MXLTie.start == .start)
         #expect(MXLTie.stop == .stop)
-        #expect(MXLTie.stopStart == .stopStart)
     }
 
     @Test
-    func test_plusEqualsOperator() {
-        var tie = MXLTie.neither
+    func test_hashable() {
+        let set: Set<MXLTie> = [.start, .stop, .start]
 
-        tie += .start
+        #expect(set.count == 2)
+    }
 
-        #expect(tie == .start)
-
-        tie += .stop
-
-        #expect(tie == .stopStart)
+    @Test
+    func test_inequality() {
+        #expect(MXLTie.start != .stop)
     }
 }

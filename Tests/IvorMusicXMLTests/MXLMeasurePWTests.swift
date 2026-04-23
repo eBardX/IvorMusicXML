@@ -14,7 +14,7 @@ extension MXLMeasurePWTests {
         let note = MXLNote(isChord: false,
                            value: .rest,
                            duration: 480,
-                           tie: .neither)
+                           ties: [])
         let measure = MXLMeasurePW(number: "1",
                                    items: [.note(note),
                                            .attributes(4)])

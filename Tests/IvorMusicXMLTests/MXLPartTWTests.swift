@@ -22,7 +22,7 @@ extension MXLPartTWTests {
         let note = MXLNote(isChord: false,
                            value: .rest,
                            duration: 480,
-                           tie: .neither)
+                           ties: [])
         let part = MXLPartTW(id: "P1",
                              items: [.note(note),
                                      .backup(480)])

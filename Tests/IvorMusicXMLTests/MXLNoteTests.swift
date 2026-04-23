@@ -14,7 +14,7 @@ extension MXLNoteTests {
         let note = MXLNote(isChord: false,
                            value: .rest,
                            duration: 480,
-                           tie: .neither)
+                           ties: [])
 
         #expect(note.duration == 480)
     }
@@ -24,7 +24,7 @@ extension MXLNoteTests {
         let note = MXLNote(isChord: true,
                            value: .rest,
                            duration: 240,
-                           tie: .neither)
+                           ties: [])
 
         #expect(note.isChord)
     }
@@ -34,19 +34,19 @@ extension MXLNoteTests {
         let note = MXLNote(isChord: false,
                            value: .rest,
                            duration: 240,
-                           tie: .neither)
+                           ties: [])
 
         #expect(!note.isChord)
     }
 
     @Test
-    func test_initSetsTie() {
+    func test_initSetsTies() {
         let note = MXLNote(isChord: false,
                            value: .rest,
                            duration: 120,
-                           tie: .start)
+                           ties: [.start])
 
-        #expect(note.tie == .start)
+        #expect(note.ties == [.start])
     }
 
     @Test
@@ -57,7 +57,7 @@ extension MXLNoteTests {
         let note = MXLNote(isChord: false,
                            value: .pitch(pitch),
                            duration: 960,
-                           tie: .neither)
+                           ties: [])
 
         if case let .pitch(value) = note.value {
             #expect(value.letter == .c)
@@ -72,7 +72,7 @@ extension MXLNoteTests {
         let note = MXLNote(isChord: false,
                            value: .rest,
                            duration: 480,
-                           tie: .neither)
+                           ties: [])
 
         if case .rest = note.value {
             // pass
@@ -86,7 +86,7 @@ extension MXLNoteTests {
         let note = MXLNote(isChord: false,
                            value: .unpitched,
                            duration: 480,
-                           tie: .neither)
+                           ties: [])
 
         if case .unpitched = note.value {
             // pass

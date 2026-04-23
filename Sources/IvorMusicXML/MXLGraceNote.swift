@@ -12,29 +12,29 @@ public struct MXLGraceNote {
     /// - Parameter value:      The pitch, rest, or unpitched value of the
     ///                         grace note.
     /// - Parameter duration:   The duration type of the grace note.
-    /// - Parameter tie:        The tie state of the grace note.
+    /// - Parameter ties:       The set of ties to or from the grace note.
     public init(isChord: Bool,
                 value: MXLNote.Value,
                 duration: MXLGraceDuration,
-                tie: MXLTie) {
+                ties: Set<MXLTie>) {
         self.duration = duration
         self.isChord = isChord
-        self.tie = tie
+        self.ties = ties
         self.value = value
     }
 
     // MARK: Public Instance Properties
 
-    /// The duration type of the grace note.
+    /// The duration type of this grace note.
     public let duration: MXLGraceDuration
 
-    /// A Boolean value indicating whether the grace note is part of a chord.
+    /// A Boolean value indicating whether this grace note is part of a chord.
     public let isChord: Bool
 
-    /// The tie state of the grace note.
-    public let tie: MXLTie
+    /// The set of ties to or from this grace note.
+    public let ties: Set<MXLTie>
 
-    /// The pitch, rest, or unpitched value of the grace note.
+    /// The pitch, rest, or unpitched value of this grace note.
     public let value: MXLNote.Value
 }
 

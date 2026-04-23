@@ -47,7 +47,7 @@ extension MXLMusicItemTests {
         let graceNote = MXLGraceNote(isChord: false,
                                      value: .rest,
                                      duration: .unspecified,
-                                     tie: .neither)
+                                     ties: [])
         let item = MXLMusicItem.graceNote(graceNote)
 
         if case let .graceNote(value) = item {
@@ -62,7 +62,7 @@ extension MXLMusicItemTests {
         let note = MXLNote(isChord: false,
                            value: .rest,
                            duration: 480,
-                           tie: .neither)
+                           ties: [])
         let item = MXLMusicItem.note(note)
 
         if case let .note(value) = item {

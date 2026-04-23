@@ -14,7 +14,7 @@ extension MXLGraceNoteTests {
         let note = MXLGraceNote(isChord: false,
                                 value: .rest,
                                 duration: .unspecified,
-                                tie: .neither)
+                                ties: [])
 
         if case .unspecified = note.duration {
             // pass
@@ -28,7 +28,7 @@ extension MXLGraceNoteTests {
         let note = MXLGraceNote(isChord: true,
                                 value: .rest,
                                 duration: .unspecified,
-                                tie: .neither)
+                                ties: [])
 
         #expect(note.isChord)
     }
@@ -38,9 +38,9 @@ extension MXLGraceNoteTests {
         let note = MXLGraceNote(isChord: false,
                                 value: .rest,
                                 duration: .unspecified,
-                                tie: .stop)
+                                ties: [.stop])
 
-        #expect(note.tie == .stop)
+        #expect(note.ties == [.stop])
     }
 
     @Test
@@ -51,7 +51,7 @@ extension MXLGraceNoteTests {
         let note = MXLGraceNote(isChord: false,
                                 value: .pitch(pitch),
                                 duration: .makeTime(0.5),
-                                tie: .neither)
+                                ties: [])
 
         if case let .pitch(p) = note.value {
             #expect(p.letter == .d)
@@ -65,7 +65,7 @@ extension MXLGraceNoteTests {
         let note = MXLGraceNote(isChord: false,
                                 value: .rest,
                                 duration: .makeTime(0.25),
-                                tie: .neither)
+                                ties: [])
 
         if case let .makeTime(value) = note.duration {
             #expect(value == 0.25)
@@ -79,7 +79,7 @@ extension MXLGraceNoteTests {
         let note = MXLGraceNote(isChord: false,
                                 value: .rest,
                                 duration: .stealTimeFollowing(33.0),
-                                tie: .neither)
+                                ties: [])
 
         if case let .stealTimeFollowing(value) = note.duration {
             #expect(value == 33.0)
@@ -93,7 +93,7 @@ extension MXLGraceNoteTests {
         let note = MXLGraceNote(isChord: false,
                                 value: .rest,
                                 duration: .stealTimePrevious(50.0),
-                                tie: .neither)
+                                ties: [])
 
         if case let .stealTimePrevious(value) = note.duration {
             #expect(value == 50.0)
