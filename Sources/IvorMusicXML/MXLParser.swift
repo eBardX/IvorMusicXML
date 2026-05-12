@@ -110,9 +110,9 @@ extension MXLParser {
 
     private static func _makePitchAccidental(_ text: String) -> MXLPitch.Accidental? {
         if let alter = Float(text) {
-            return pitchAccidentals[Int(alter.rounded(.towardZero))]
+            pitchAccidentals[Int(alter.rounded(.towardZero))]
         } else {
-            return nil
+            nil
         }
     }
 
@@ -469,9 +469,7 @@ extension MXLParser {
         //
         try node.expectElement(.rootfiles)
 
-        let rootFiles = try node.requiredChildElements(.rootfile) { try _parseRootFile($0) }
-
-        return rootFiles
+        return try node.requiredChildElements(.rootfile) { try _parseRootFile($0) }
     }
 
     private static func _parseScorePart(_ node: Node) throws -> MXLScorePart {
