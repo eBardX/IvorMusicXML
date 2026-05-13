@@ -31,7 +31,7 @@ public struct MXLNote {
     /// A Boolean value indicating whether this note is part of a chord.
     public let isChord: Bool
 
-    /// The set of ties to or from this note..
+    /// The set of ties to or from this note.
     public let ties: Set<MXLTie>
 
     /// The pitch, rest, or unpitched value of this note.

@@ -25,10 +25,10 @@ public struct MXLPitch {
 
     // MARK: Public Instance Properties
 
-    /// The accidental of the pitch.
+    /// The accidental of this pitch.
     public let accidental: Accidental
 
-    /// The letter name of the pitch.
+    /// The letter name of this pitch.
     public let letter: Letter
 
     /// The octave number of the pitch.

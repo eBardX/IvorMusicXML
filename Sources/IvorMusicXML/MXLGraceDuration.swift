@@ -7,11 +7,11 @@ public enum MXLGraceDuration {
     case makeTime(Float)
 
     /// A grace note that steals time from the following note, with the
-    /// specified percentage of that note's time.
+    /// specified percentage of that note’s time.
     case stealTimeFollowing(Float)
 
-    /// A grace note that steals time from the previous note, with the
-    /// specified percentage of that note's time.
+    /// A grace note that steals time from the previous note, with the specified
+    /// percentage of that note’s time.
     case stealTimePrevious(Float)
 
     /// A grace note with an unspecified duration.
