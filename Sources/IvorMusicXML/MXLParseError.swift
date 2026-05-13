@@ -18,10 +18,12 @@ public enum MXLParseError {
 // MARK: - EnhancedError
 
 extension MXLParseError: EnhancedError {
+    /// Returns the error category identifying the source module.
     public var category: Category? {
         Category("IvorMusicXML")
     }
 
+    /// Returns the underlying error that caused this error, if any.
     public var cause: (any EnhancedError)? {
         switch self {
         case let .parseFailure(error):
@@ -32,6 +34,7 @@ extension MXLParseError: EnhancedError {
         }
     }
 
+    /// Returns a human-readable description of this error.
     public var message: String {
         switch self {
         case let .invalidRootFileMediaType(mediaType):
