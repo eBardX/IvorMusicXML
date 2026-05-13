@@ -22,4 +22,4 @@ IvorMusicXML is available under [the MIT license][license].
 
 [docc]:     https://www.swift.org/documentation/docc/
 [license]:  https://github.com/eBardX/IvorMusicXML/blob/main/LICENSE.md
-[refdoc]:   https://eBardX.github.io/IvorMusicXML/documentation/ivormusicxml
+[refdoc]:   https://eBardX.github.io/ivor-packages-docs/documentation/ivormusicxml
