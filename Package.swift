@@ -1,4 +1,4 @@
-// swift-tools-version: 6.2
+// swift-tools-version: 6.3
 
 // © 2025–2026 John Gary Pusey (see LICENSE.md)
 
@@ -17,17 +17,22 @@ let package = Package(name: "IvorMusicXML",
                                   .macOS(.v15)],
                       products: [.library(name: "IvorMusicXML",
                                           targets: ["IvorMusicXML"])],
-                      dependencies: [.package(url: "https://github.com/eBardX/XestiTools.git",
-                                              .upToNextMajor(from: "7.2.0")),
+                      dependencies: [.package(url: "https://github.com/eBardX/XestiArchive.git",
+                                              .upToNextMajor(from: "1.1.0")),
+                                     .package(url: "https://github.com/eBardX/XestiTools.git",
+                                              .upToNextMajor(from: "9.1.0")),
                                      .package(url: "https://github.com/eBardX/XestiXML.git",
-                                              .upToNextMajor(from: "4.0.0"))],
+                                              .upToNextMajor(from: "5.0.0"))],
                       targets: [.target(name: "IvorMusicXML",
-                                        dependencies: [.product(name: "XestiTools",
+                                        dependencies: [.product(name: "XestiArchive",
+                                                                package: "XestiArchive"),
+                                                       .product(name: "XestiTools",
                                                                 package: "XestiTools"),
                                                        .product(name: "XestiXML",
                                                                 package: "XestiXML")],
                                         swiftSettings: swiftSettings),
                                 .testTarget(name: "IvorMusicXMLTests",
                                             dependencies: [.target(name: "IvorMusicXML")],
+                                            resources: [.copy("Fixtures")],
                                             swiftSettings: swiftSettings)],
                       swiftLanguageModes: [.v6])
