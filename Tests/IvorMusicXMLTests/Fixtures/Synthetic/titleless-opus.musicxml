@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE opus PUBLIC "-//Recordare//DTD MusicXML 4.0 Opus//EN" "http://www.musicxml.org/dtds/opus.dtd">
+<opus xmlns:xlink="http://www.w3.org/1999/xlink" version="4.0">
+  <opus>
+    <title>Nested Book</title>
+    <score xlink:href="minimal-partwise.musicxml" xlink:type="simple"/>
+  </opus>
+  <opus-link xlink:href="other-opus.musicxml" xlink:type="simple"/>
+  <score xlink:href="clef-sign-none.musicxml" xlink:type="simple"/>
+</opus>

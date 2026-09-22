@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
+<score-partwise version="3.0">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Music</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>2</divisions>
+      </attributes>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>2</duration>
+        <type>quarter</type>
+        <notations>
+          <slur bezier-offset="2" bezier-y="10" number="1" type="start"/>
+        </notations>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>2</duration>
+        <type>quarter</type>
+        <notations>
+          <slur bezier-offset2="6" bezier-y2="10" number="1" type="stop"/>
+        </notations>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

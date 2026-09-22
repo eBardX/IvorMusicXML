@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 1.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
+<score-partwise>
+  <part-list>
+    <part-group number="1" type="start">
+      <group-name font-size="12" justify="center">Woodwinds</group-name>
+      <group-abbreviation font-size="10">Ww.</group-abbreviation>
+      <group-symbol>bracket</group-symbol>
+    </part-group>
+    <score-part id="P1">
+      <part-name>Flute</part-name>
+    </score-part>
+    <part-group number="1" type="stop"/>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>1</divisions>
+      </attributes>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>4</duration>
+        <type>whole</type>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

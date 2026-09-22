@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE opus PUBLIC "-//Recordare//DTD MusicXML 4.0 Opus//EN" "http://www.musicxml.org/dtds/opus.dtd">
+<opus xmlns:xlink="http://www.w3.org/1999/xlink" version="4.0">
+  <title>Two Miniatures</title>
+  <score xlink:href="minimal-partwise.musicxml" xlink:type="simple"/>
+  <score new-page="yes" xlink:href="clef-sign-none.musicxml" xlink:type="simple"/>
+</opus>

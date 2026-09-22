@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE opus PUBLIC "-//Recordare//DTD MusicXML 1.0 Opus//EN" "http://www.musicxml.org/dtds/opus.dtd">
+<opus>
+  <title>Complete Works</title>
+  <opus>
+    <title>Volume One</title>
+    <score xlink:href="minimal-partwise.musicxml" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+  </opus>
+</opus>
